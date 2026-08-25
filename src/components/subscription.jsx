@@ -1,6 +1,6 @@
 import React from 'react';
 // import Subcription from '../data/data';
-import subsData from '../data/data';
+import subsData from '../data/subcriptions_data';
 import { useState } from 'react';
 import { SubscriptionItemCard } from './subcriptionCardItem';
 
