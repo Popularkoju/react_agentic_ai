@@ -6,10 +6,10 @@ import { ShoppingCart } from './components/shoppingCart';
 function App() {
   return (
     <>
-      {/* <Pricing /> */}
-      <SubcriptionSection />
-      <TrafficLight/>
       <ShoppingCart/>
+      <TrafficLight/>
+      <SubcriptionSection />
+      
     </>
   );
 }
