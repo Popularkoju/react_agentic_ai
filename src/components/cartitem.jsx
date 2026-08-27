@@ -15,12 +15,19 @@ export default function CartItem({ product, onQuantityChange, onRemove }) {
                 <span className="text-sm text-gray-500 sm:hidden">Quantity</span>
                 <div className="flex items-center gap-2">
                     <button
-                        onClick={() => onQuantityChange(product.id, Math.max(1, product.quantity - 1))}
+                        onClick={() => {
+                            const nextQuantity = product.quantity - 1
+                            if (nextQuantity <= 0) {
+                                onRemove(product.id)
+                            } else {
+                                onQuantityChange(product.id, nextQuantity)
+                            }
+                        }}
                         className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-300 text-gray-600"
                     >
                         -
                     </button>
-                    <span className="w-4 text-center text-sm">{product.quantity}</span>
+                    <span className="w-4 text-center text-sm text-gray-900 ">{product.quantity}</span>
                     <button
                         onClick={() => onQuantityChange(product.id, product.quantity + 1)}
                         className="w-6 h-6 flex items-center justify-center rounded-full border border-gray-300 text-gray-600"
